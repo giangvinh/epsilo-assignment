@@ -16,7 +16,7 @@ export default function App() {
           <div key={atom.name}>
             <div>{atom.name}</div>
             <div style={{ width: 400, height: 200 }}>
-              <BeAtom />
+              <BeAtom eSize={atom.config.eSize} velocity={atom.config.velocity} color={atom.config.color} />
             </div>
           </div>
         ))}

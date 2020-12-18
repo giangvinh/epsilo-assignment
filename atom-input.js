@@ -6,14 +6,11 @@ export default function AtomInput({atom, index, atoms, setAtoms }) {
     velocity: 30,
     color: "#f47b20",
   });
-  const firstRender = useRef(true);
 
   useEffect(() => {
-    if (!firstRender) {
-      setAtoms([...atoms.splice(index, 1, { ...atom, config: localConfig })]);
-    } else {
-      firstRender.current = false;
-    }
+    setAtoms([
+      ...atoms.map((x, i) => (i !== index ? x : { ...x, config: localConfig })),
+    ]);
   }, [localConfig]);
 
   return (
