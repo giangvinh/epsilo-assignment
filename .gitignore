@@ -1,0 +1,7 @@
+node_modules
+.cache
+dist
+epsilo-assignment-src
+
+# Local Netlify folder
+.netlify
