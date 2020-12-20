@@ -21,7 +21,7 @@ export default function AtomMultiInput({ atoms, setAtoms }) {
 
       {atoms.map((atom, index) => (
         <AtomInput
-          key={index}
+          key={atom.name}
           index={index}
           atom={atom}
           setAtoms={setAtoms}

@@ -9,7 +9,8 @@ export default function AtomInput({atom, index, atoms, setAtoms }) {
 
   useEffect(() => {
     setAtoms([
-      ...atoms.map((x, i) => (i !== index ? x : { ...x, config: localConfig })),
+      ...atoms
+        .map((x, i) => (i !== index ? x : { ...x, config: localConfig })),
     ]);
   }, [localConfig]);
 
@@ -50,6 +51,9 @@ export default function AtomInput({atom, index, atoms, setAtoms }) {
             type="color"
           />
         </label>
+            <button type="button" onClick={
+              () => setAtoms(atoms.filter((_,i) => i !== index))
+            }>Remove</button>
       </fieldset>
     </form>
   );
