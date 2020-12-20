@@ -1,12 +1,7 @@
 import React from "react";
-import AtomInput, { Atom, setAtomsFn } from "./atom-input";
+import AtomInput from "../atom-input/atom-input";
 
-export type MultiInputProps = {
-  atoms: Atom[];
-  setAtoms: setAtomsFn;
-};
-
-export default function AtomMultiInput({ atoms, setAtoms }: MultiInputProps) {
+export default function AtomMultiInput({ atoms, setAtoms }) {
   return (
     <React.Fragment>
       <button
@@ -26,7 +21,7 @@ export default function AtomMultiInput({ atoms, setAtoms }: MultiInputProps) {
 
       {atoms.map((atom, index) => (
         <AtomInput
-          key={index}
+          key={atom.name}
           index={index}
           atom={atom}
           setAtoms={setAtoms}

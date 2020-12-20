@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "start": "parcel index.html index-ts.html vendor.html introduction.html",
-    "build": "parcel build introduction.html --no-source-maps --out-dir build"
+    "start": "parcel index.html src/pages/vendor/vendor.html src/pages/introduction/introduction.html",
+    "build": "parcel build src/pages/introduction/introduction.html --no-source-maps --out-dir build"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
