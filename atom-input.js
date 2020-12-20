@@ -1,11 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function AtomInput({atom, index, atoms, setAtoms }) {
-  const [localConfig, setLocalConfig] = useState({
-    eSize: 3,
-    velocity: 30,
-    color: "#f47b20",
-  });
+  const [localConfig, setLocalConfig] = useState(atom.config);
 
   useEffect(() => {
     setAtoms([
@@ -17,7 +13,7 @@ export default function AtomInput({atom, index, atoms, setAtoms }) {
   return (
     <form className="pure-form">
       <fieldset>
-        <legend>Config of atom #{index + 1}</legend>
+        <legend>Config of {atom.name}</legend>
         <label>
           Electron size
           <input
@@ -57,5 +53,4 @@ export default function AtomInput({atom, index, atoms, setAtoms }) {
       </fieldset>
     </form>
   );
-
 }
